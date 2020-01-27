@@ -25,16 +25,12 @@ export class NavBarComponent {
     let intPrice: number;
     let intQuantity: number;
 
-    if (this.cart != undefined) {
-      if (this.cart.length > 0) {
-        this.cart.products.forEach((item, i) => {
-          intPrice = parseInt(item.price);
-          intQuantity = parseInt(item.quantity);
-          totalCost.push(intPrice);
-          quantity.push(intQuantity);
-        });
-      }
-    }
+    this.cart.products.forEach((item, i) => {
+      intPrice = parseInt(item.price);
+      intQuantity = parseInt(item.quantity);
+      totalCost.push(intPrice);
+      quantity.push(intQuantity);
+    });
 
     this.totalPrice = totalCost.reduce((acc, item) => {
       return (acc += item);
