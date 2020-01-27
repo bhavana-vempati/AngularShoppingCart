@@ -48,8 +48,12 @@ export class CartComponent {
   }
   ngOnInit() {
     this.cartSubscription = this.cartStore.getState().subscribe(res => {
-      this.cart = res.products;
-      this.getTotalPrice();
+      if (res != undefined) {
+        if (res.length > 0) {
+          this.cart = res.products;
+          this.getTotalPrice();
+        }
+      }
     });
   }
 
