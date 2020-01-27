@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { ProductService } from "../../services/product.service";
 import { Subscription } from "rxjs/Subscription";
-import { CartAction } from "app/store/actions/cart.actions";
+import { CartAction } from "../../store/actions/cart.actions";
 
 @Component({
   selector: "cart",
